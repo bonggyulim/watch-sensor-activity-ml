@@ -1,2 +1,4 @@
 data/processed/raw_window_bank.csv filter=lfs diff=lfs merge=lfs -text
 data/processed/sensor_ADE.csv filter=lfs diff=lfs merge=lfs -text
+data/processed/feature_bank.csv filter=lfs diff=lfs merge=lfs -text
+data/processed/fusion_df.csv filter=lfs diff=lfs merge=lfs -text

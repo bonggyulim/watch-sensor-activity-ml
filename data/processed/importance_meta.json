@@ -1,0 +1,7 @@
+{
+  "sample_size": 300,
+  "window_size": 50,
+  "step_size": 25,
+  "skip_head": 80,
+  "model_path": "two_stage_activity_classifier_best.pkl"
+}
