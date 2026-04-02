@@ -1,0 +1,2 @@
+﻿accuracy,f1_macro,f1_weighted,window_size,step_size,skip_head
+0.8804027504911591,0.8797156378590588,0.880552471028245,50,25,80

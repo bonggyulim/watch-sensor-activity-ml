@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Generated demo assets
+data/raw/
+data/processed/sensor_ADE.csv
+data/processed/fusion_df.csv
+data/processed/accel_feat_df.csv
+data/processed/gyro_feat_df.csv
+data/processed/accel_window_meta.csv
+data/processed/gyro_window_meta.csv
+data/processed/feature_bank.csv
+data/processed/raw_window_bank.csv
+data/processed/importance.csv
+data/processed/importance_meta.json

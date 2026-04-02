@@ -1,0 +1,6 @@
+﻿window_size,step_size,skip_head,stage2_model_key,stage2_model_name,stage2_acc,cv_best_score,stage2_best_params
+50,25,80,SVM,SVC,0.8221563542052612,,
+50,25,80,KNN,KNeighborsClassifier,0.7925157465728048,,
+50,25,80,LogisticRegression,LogisticRegression,0.773249351611708,,
+50,25,80,GradientBoosting,GradientBoostingClassifier,0.7673212300852168,,
+50,25,80,RandomForest,RandomForestClassifier,0.7576880326046684,,
