@@ -157,12 +157,12 @@ def build_result_table(predictions: list[dict], segment_seconds: int) -> pd.Data
         meta = ACTIVITY_META[predicted_label]
         rows.append(
             {
-                "구간 번호": item["segment_index"] + 1,
-                "시간 범위": f"{item['segment_index'] * segment_seconds}~{(item['segment_index'] + 1) * segment_seconds}초",
-                "선택 클래스": ACTIVITY_META[selected_label]["label_kr"],
-                "모델 예측": ACTIVITY_META[predicted_label]["label_kr"],
-                "confidence": round(item["confidence"], 4),
-                "이모지": meta["emoji"],
+                "Segment": item["segment_index"] + 1,
+                "Time Range": f"{item['segment_index'] * segment_seconds}~{(item['segment_index'] + 1) * segment_seconds}s",
+                "Selected Class": ACTIVITY_META[selected_label]["label_kr"],
+                "Predicted Class": ACTIVITY_META[predicted_label]["label_kr"],
+                "Confidence": round(item["confidence"], 4),
+                "Emoji": meta["emoji"],
             }
         )
     return pd.DataFrame(rows)
@@ -183,8 +183,8 @@ def build_timeline_df(sequence_items: list[dict], segment_seconds: int, sample_r
 def plot_sensor_timeline(timeline_df: pd.DataFrame, segment_count: int, segment_seconds: int):
     fig, axes = plt.subplots(2, 1, figsize=(14, 8), sharex=True)
     sensor_specs = [
-        ("accel", axes[0], ["accel_x", "accel_y", "accel_z"], "가속도(accel) XYZ"),
-        ("gyro", axes[1], ["gyro_x", "gyro_y", "gyro_z"], "자이로(gyro) XYZ"),
+        ("accel", axes[0], ["accel_x", "accel_y", "accel_z"], "Accelerometer XYZ"),
+        ("gyro", axes[1], ["gyro_x", "gyro_y", "gyro_z"], "Gyroscope XYZ"),
     ]
     colors = ["#e76f51", "#2a9d8f", "#264653"]
 
@@ -197,7 +197,7 @@ def plot_sensor_timeline(timeline_df: pd.DataFrame, segment_count: int, segment_
         axis.grid(alpha=0.25)
         axis.legend(loc="upper right")
 
-    axes[1].set_xlabel("시간(초)")
+    axes[1].set_xlabel("Time (s)")
     plt.tight_layout()
     return fig
 
@@ -225,7 +225,7 @@ def build_importance_view(
     top_n: int = 5,
 ) -> tuple[pd.DataFrame, str]:
     top_df = importance_df.head(top_n).copy()
-    top_df["현재 구간 값"] = top_df["feature"].map(lambda col: round(float(feature_row.get(col, np.nan)), 5))
+    top_df["Current Value"] = top_df["feature"].map(lambda col: round(float(feature_row.get(col, np.nan)), 5))
 
     predicted_label = feature_row.get("activity_name")
     class_row = class_profile_df[class_profile_df["activity_name"] == predicted_label]
@@ -246,4 +246,4 @@ def build_importance_view(
                 message += f" `{feature_name}` 값이 해당 클래스 평균보다 높은 편입니다."
                 break
 
-    return top_df[["feature", "importance", "현재 구간 값"]], message
+    return top_df[["feature", "importance", "Current Value"]], message

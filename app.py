@@ -195,7 +195,7 @@ def render_result_section() -> None:
 
     st.markdown("### 구간별 요약")
     display_table = result_table.copy()
-    display_table["confidence"] = display_table["confidence"].map(lambda x: f"{x:.2%}")
+    display_table["Confidence"] = display_table["Confidence"].map(lambda x: f"{x:.2%}")
     st.dataframe(display_table, use_container_width=True, hide_index=True)
 
     st.markdown("### 시계열 시각화")
