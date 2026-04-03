@@ -3,6 +3,10 @@
 기존에 학습한 활동 분류 모델과 실제 윈도우 센서 데이터를 사용해 만든 Streamlit 데모 앱입니다.  
 사용자는 `걷기`, `서기`, `앉기` 버튼으로 2초 구간을 최대 5개까지 쌓아 시퀀스를 만들고, `시작` 버튼으로 각 구간의 예측 결과를 확인할 수 있습니다.
 
+## 프로토타이핑 URL
+
+https://watch-sensor-activity-ml.streamlit.app/
+
 ## 개요
 
 - 실제 데이터 기반 랜덤 샘플 사용
@@ -20,37 +24,6 @@
 - accel XYZ / gyro XYZ 시계열 시각화
 - 최종 대표 결과 카드 제공
 - permutation importance 기반 중요 특성 표시
-
-## 프로젝트 구조
-
-```text
-MotionSense/
-├─ app.py
-├─ utils.py
-├─ prepare_demo_assets.py
-├─ requirements.txt
-├─ models/
-│  └─ two_stage_activity_classifier_best.pkl
-├─ data/
-│  ├─ raw/
-│  └─ processed/
-│     ├─ sensor_ADE.csv
-│     ├─ fusion_df.csv
-│     ├─ feature_bank.csv          # 생성 파일
-│     ├─ raw_window_bank.csv       # 생성 파일
-│     ├─ importance.csv            # 생성 파일
-│     └─ importance_meta.json      # 생성 파일
-└─ notebooks/
-```
-
-## 사용 파일 설명
-
-- [app.py](c:\Users\human-03\Desktop\MotionSense\app.py)
-  - Streamlit 실행 진입점
-- [utils.py](c:\Users\human-03\Desktop\MotionSense\utils.py)
-  - 모델 예측, 샘플링, 결과 요약, 시각화 유틸
-- [prepare_demo_assets.py](c:\Users\human-03\Desktop\MotionSense\prepare_demo_assets.py)
-  - 실제 데이터에서 `feature_bank`, `raw_window_bank`, `importance` 생성
 
 ## 설치 방법
 
@@ -142,23 +115,6 @@ pip install -r requirements.txt
 - 처음 실행 시 자산 생성에 시간이 조금 걸릴 수 있습니다.
 - 기존 `src/app.py`는 현재 데모 기준 실행 진입점이 아닙니다. 실행은 루트의 `app.py`를 사용하세요.
 
-## 검증 내용
-
-다음 항목을 기준으로 확인했습니다.
-
-- `prepare_demo_assets.py` 실행 성공
-- `feature_bank.csv`, `raw_window_bank.csv`, `importance.csv` 생성 성공
-- `py_compile` 문법 검사 통과
-- 실제 데이터 3구간 샘플링 후
-  - 모델 예측
-  - 결과 테이블 생성
-  - 타임라인 생성
-  스모크 테스트 통과
-
-## 라이선스 / 비고
-
-학습용 프로젝트 구조를 유지하면서 데모용 최소 파일만 정리한 상태입니다.  
-추가로 원하면 다음도 이어서 정리할 수 있습니다.
 
 - `src/app.py` 정리
 - README 이미지 추가
