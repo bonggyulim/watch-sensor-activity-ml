@@ -5,7 +5,11 @@
 
 ## 프로토타이핑 URL
 
+- URL
 https://watch-sensor-activity-ml.streamlit.app/
+
+- 보고서
+https://drive.google.com/file/d/1E1by3cUGXdX8hplLD4plwCnmvY81s9ix/view?usp=drive_link
 
 ## 개요
 
@@ -14,6 +18,14 @@ https://watch-sensor-activity-ml.streamlit.app/
 - 저장된 2단 분류 모델을 앱 내부에서 3클래스(`Walking`, `Sitting`, `Standing`) 출력으로 래핑
 - 선택한 실제 raw xyz 데이터를 이어붙여 전체 시계열 표시
 - 글로벌 중요 특성 TOP 5와 현재 대표 구간의 특성값 표시
+
+
+## Machine Learning
+ **Scikit-learn**
+2단 분류 구조
+   - Stage 1 (SVM): `Walking` vs `Static`
+   - Stage 2 (SVM): `Sitting` vs `Standing`
+
 
 ## 주요 기능
 
