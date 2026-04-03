@@ -9,7 +9,7 @@
 https://watch-sensor-activity-ml.streamlit.app/
 
 - 보고서
-https://drive.google.com/file/d/1E1by3cUGXdX8hplLD4plwCnmvY81s9ix/view?usp=drive_link
+https://drive.google.com/file/d/1C39ooYD9BeqYCaCFAqEzeRHcUmsBtI2I/view?usp=sharing
 
 ## 개요
 
