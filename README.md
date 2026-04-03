@@ -95,28 +95,3 @@ pip install -r requirements.txt
 
 또한 모델 입력 시 `feature_columns` 순서를 저장된 번들 기준으로 그대로 사용해 학습 시점과 동일한 입력 순서를 유지합니다.
 
-## 대표 결과 기준
-
-앱의 전체 대표 결과는 구간별 예측 결과의 다수결로 계산합니다.
-
-- 예: `Walking, Walking, Sitting`이면 대표 결과는 `Walking`
-- 동률이 나면 같은 클래스 중 confidence가 가장 높은 구간을 대표 구간으로 사용
-
-## 중요 특성 표시 방식
-
-- permutation importance를 사용
-- 앱 시작 전 `prepare_demo_assets.py`에서 `importance.csv` 생성
-- 앱 화면에서는 글로벌 중요 특성 TOP 5를 보여주고
-- 대표 구간의 실제 feature 값도 함께 보여줌
-
-## 주의 사항
-
-- `raw_window_bank.csv`는 용량이 커서 GitHub에 올리지 않는 것을 권장합니다.
-- 처음 실행 시 자산 생성에 시간이 조금 걸릴 수 있습니다.
-- 기존 `src/app.py`는 현재 데모 기준 실행 진입점이 아닙니다. 실행은 루트의 `app.py`를 사용하세요.
-
-
-- `src/app.py` 정리
-- README 이미지 추가
-- 데모 스크린샷 첨부
-- GitHub용 프로젝트 설명 보강
