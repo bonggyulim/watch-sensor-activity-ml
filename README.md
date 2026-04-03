@@ -1,4 +1,4 @@
-# MotionSense Streamlit Demo
+# Watch-sensor-activity-ml
 
 기존에 학습한 활동 분류 모델과 실제 윈도우 센서 데이터를 사용해 만든 Streamlit 데모 앱입니다.  
 사용자는 `걷기`, `서기`, `앉기` 버튼으로 2초 구간을 최대 5개까지 쌓아 시퀀스를 만들고, `시작` 버튼으로 각 구간의 예측 결과를 확인할 수 있습니다.
